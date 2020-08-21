@@ -1,0 +1,42 @@
+# NOTE: This name appears in GitHub's Checks API and in workflow's status badge.
+name: ci-verify-update
+
+# Trigger the workflow when:
+on:
+  # Or when a pull request event occurs for a pull request against one of the
+  # matched branches.
+  pull_request:
+    branches:
+      - production
+
+jobs:
+  verify-update:
+    # NOTE: This name appears in GitHub's Checks API.
+    name: verify-update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout base registry
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.base_ref }}
+          path: snapshot-base
+      - name: Checkout updated registry
+        uses: actions/checkout@v2
+        with:
+          # Check out pull request's HEAD commit instead of the merge commit to
+          # work-around an issue where wrong a commit is being checked out.
+          # For more details, see:
+          # https://github.com/actions/checkout/issues/299.
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: snapshot-updated
+      - name: Set up Go 1.14
+        uses: actions/setup-go@v2
+        with:
+          go-version: "1.14.x"
+      - name: Install latest metadata-registry-tools
+        run: |
+          GO111MODULE=on go get -v github.com/oasisprotocol/metadata-registry-tools/oasis-registry
+      - name: Verify update
+        run: |
+          cd snapshot-updated
+          oasis-registry verify --update ../snapshot-base
