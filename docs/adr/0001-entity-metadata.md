@@ -3,6 +3,7 @@
 ## Changelog
 
 - 2020-08-05: Initial version
+- 2020-08-21: Fix maximum name length
 
 ## Status
 
@@ -33,7 +34,7 @@ defined by RFC 7049] with the following fields:
 * `v`: format version (uint16, required, must be `1`)
 * `serial`: the serial number of the entity metadata statement where the highest
   serial number should be treated as the most recent (uint64)
-* `name`: an entity name (string, optional, max 64 characters)
+* `name`: an entity name (string, optional, max 50 characters)
 * `url`: an URL associated with the entity (string, optional, max 64 characters,
   must be a valid URL using the scheme `https` without any query or fragments)
 * `email`: an e-mail address associated with the entity (string, optional, max
