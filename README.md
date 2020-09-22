@@ -50,7 +50,10 @@ following steps:
 
    This will create (or update) the registry entry.
 
-4. Commit your changes and create a pull request.
+4. Commit your changes in the `registry/` directory and create a pull request.
+   Make sure to NOT commit the plain `entity-metadata.json` file in case you
+   created it in the same directory. The same metadata can be extracted from the
+   generated signed entity statement.
 
 5. Automated checks will make sure that the signed statement is valid and that
    the update has been performed correctly.
