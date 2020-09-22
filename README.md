@@ -1,4 +1,4 @@
-# Oasis Metadata Registry
+# Oasis Metadata Registry2
 
 This repository contains an off-chain registry of signed statements about
 various entities that may exist on the Oasis Network. Each statement is
