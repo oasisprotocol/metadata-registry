@@ -28,10 +28,13 @@ following steps:
      "name": "My entity name",
      "url": "https://my.entity/url",
      "email": "my@entity.org",
-     "keybase": "myentity",
-     "twitter": "myentity"
+     "keybase": "keybase_handle",
+     "twitter": "twitter_handle"
    }
    ```
+
+   Note that `keybase` and `twitter` fields should contain handles (usernames)
+   not URLs. See [ADR 0001] for the description of all the field formats.
 
    In case you are updating an existing entry, you must bump the serial number.
 
@@ -63,6 +66,7 @@ following steps:
 
 <!-- markdownlint-disable line-length -->
 [`oasis-registry`]: https://github.com/oasisprotocol/metadata-registry-tools
+[ADR 0001]: docs/adr/0001-entity-metadata.md
 <!-- markdownlint-enable line-length -->
 
 ## Directories

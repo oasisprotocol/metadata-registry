@@ -2,6 +2,7 @@
 
 ## Changelog
 
+- 2020-09-29: Make keybase/twitter fields non-ambiguous
 - 2020-08-05: Initial version
 - 2020-08-21: Fix maximum name length
 
@@ -39,8 +40,10 @@ defined by RFC 7049] with the following fields:
   must be a valid URL using the scheme `https` without any query or fragments)
 * `email`: an e-mail address associated with the entity (string, optional, max
   32 characters, must be a valid e-mail address)
-* `keybase`: a keybase.io handle (string, optional, max 32 characters)
-* `twitter`: a Twitter handle (string, optional, max 32 characters)
+* `keybase`: a keybase.io handle (string, optional, max 32 characters, must
+  match the regular expression `^[A-Za-z0-9_]+$`)
+* `twitter`: a Twitter handle (string, optional, max 32 characters, must match
+  the regular expression `^[A-Za-z0-9_]+$`)
 
 The entity metadata document is signed using the [signed envelope] used by Oasis
 Core with the following [domain separation context]:
