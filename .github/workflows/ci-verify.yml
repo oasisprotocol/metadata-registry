@@ -7,11 +7,16 @@ on:
   push:
     branches:
       - production
+  # Or when a pull request event occurs for a pull request against one of the
+  # matched branches.
+  pull_request:
+    branches:
+      - production
 
 jobs:
-  verify-update:
+  verify:
     # NOTE: This name appears in GitHub's Checks API.
-    name: verify-update
+    name: verify
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
