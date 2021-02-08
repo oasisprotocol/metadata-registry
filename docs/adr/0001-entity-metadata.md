@@ -3,8 +3,8 @@
 ## Changelog
 
 - 2020-09-29: Make keybase/twitter fields non-ambiguous
-- 2020-08-05: Initial version
 - 2020-08-21: Fix maximum name length
+- 2020-08-05: Initial version
 
 ## Status
 
