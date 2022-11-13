@@ -16,12 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout base registry
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.base_ref }}
           path: snapshot-base
       - name: Checkout updated registry
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # Check out pull request's HEAD commit instead of the merge commit to
           # work-around an issue where wrong a commit is being checked out.
@@ -29,13 +29,13 @@ jobs:
           # https://github.com/actions/checkout/issues/299.
           ref: ${{ github.event.pull_request.head.sha }}
           path: snapshot-updated
-      - name: Set up Go 1.14
-        uses: actions/setup-go@v2
+      - name: Set up Go 1.17
+        uses: actions/setup-go@v3
         with:
-          go-version: "1.14.x"
+          go-version: "1.17.x"
       - name: Install latest metadata-registry-tools
         run: |
-          GO111MODULE=on go get -v github.com/oasisprotocol/metadata-registry-tools/oasis-registry
+          go install github.com/oasisprotocol/metadata-registry-tools/oasis-registry@latest
       - name: Verify update
         run: |
           cd snapshot-updated
