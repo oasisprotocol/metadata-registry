@@ -1,1 +1,7 @@
-{"untrusted_raw_value":"p2F2AWN1cmx1aHR0cHM6Ly92YWxpZGF0b3Iub25lZG5hbWV4KlZhbGlkYXRvci5PTkUgfCAwJSBGZWUgfCBUcnVzdGVkIFZhbGlkYXRvcmVlbWFpbHNhZG1pbkB2YWxpZGF0b3Iub25lZnNlcmlhbANna2V5YmFzZW12YWxpZGF0b3Jfb25lZ3R3aXR0ZXJsdmFsaWRhdG9yb25l","signature":{"public_key":"drOpGoCNcPxc+MpfbJU7KoBqQZa0eTQUdjTDpe3qvrY=","signature":"O2zhAzHwnyPGIqCTmZAn7PSExNkmbScZGKKfHi3ZPODCbWIC8TQrRyktcncBrnJRZUDnXnYSxyQuz2YcniHVCA=="}}
+{
+  "untrusted_raw_value": "omF2AmJpZFggdrOpGoCNcPxc+MpfbJU7KoBqQZa0eTQUdjTDpe3qvrY=",
+  "signature": {
+    "public_key": "drOpGoCNcPxc+MpfbJU7KoBqQZa0eTQUdjTDpe3qvrY=",
+    "signature": "QurHzn8JqCyWfbArorxR2AnmEvYa5T9fUsq/TPkEO3mBvAA5Cp5yjoWudz+2u30jFUUuvQcxvqTuGlPoPn6FDw=="
+  }
+}
