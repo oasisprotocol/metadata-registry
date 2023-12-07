@@ -40,7 +40,8 @@ following steps:
 
 2. Fork this repository.
 
-3. Use the [`oasis-cli`] (minimum version 0.7.1) command to generate a new signed statement.
+3. Use the [`oasis-cli`] (minimum version 0.7.1) command to generate a new
+   signed statement.
    For example:
 
    ```bash
@@ -49,6 +50,10 @@ following steps:
       --registry-dir /path/to/metadata-registry \
       /path/to/entity-metadata.json
    ```
+
+   _Note that for `--registry-dir` you must specify the path to the top-level
+   `metadata-registry` directory (e.g. the one containing this README file) and
+   not any of its subdirectories._
 
    This will create (or update) the registry entry.
 
