@@ -40,16 +40,20 @@ following steps:
 
 2. Fork this repository.
 
-3. Use the [`oasis-registry`] command to generate a new signed statement. The
-   command must be run in the directory where you cloned this repository. This
-   will require the use of an Oasis Core signer (all the same signers and
-   configuration flags are supported). For example, using a file-based signer:
+3. Use the [`oasis-cli`] (minimum version 0.7.1) command to generate a new
+   signed statement.
+   For example:
 
    ```bash
-   oasis-registry entity update \
-     --signer.dir /localhostdir/entity \
-     /path/to/entity-metadata.json
+   oasis account entity metadata-update \
+      --account my-entity-account \
+      --registry-dir /path/to/metadata-registry \
+      /path/to/entity-metadata.json
    ```
+
+   _Note that for `--registry-dir` you must specify the path to the top-level
+   `metadata-registry` directory (e.g. the one containing this README file) and
+   not any of its subdirectories._
 
    This will create (or update) the registry entry.
 
@@ -65,7 +69,7 @@ following steps:
    happens the updated entity metadata will be available for queries.
 
 <!-- markdownlint-disable line-length -->
-[`oasis-registry`]: https://github.com/oasisprotocol/metadata-registry-tools
+[`oasis-cli`]: https://docs.oasis.io/general/manage-tokens/cli/
 [ADR 0001]: docs/adr/0001-entity-metadata.md
 <!-- markdownlint-enable line-length -->
 
