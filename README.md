@@ -1,3 +1,5 @@
+_Branch used by Nexus E2E Regression tests._
+
 # Oasis Metadata Registry
 
 This repository contains an off-chain registry of signed statements about
